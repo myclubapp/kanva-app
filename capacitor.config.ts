@@ -12,6 +12,18 @@ const config: CapacitorConfig = {
       disableBackButtonHandler: true,
       // customScheme: 'kanva'  // Für URL Scheme (kanva://) - Optional
     }
+  },
+
+  // iOS Export Compliance Configuration
+  // Gibt an, dass die App keine nicht-exempte Verschlüsselung verwendet
+  ios: {
+    contentInset: 'automatic',
+    scrollEnabled: true,
+    backgroundColor: '#ffffff',
+    // Info.plist Anpassungen für Export Compliance
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false
+    }
   }
 };
 
