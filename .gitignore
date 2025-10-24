@@ -32,3 +32,19 @@ yarn-error.log*
 
 .env
 .env.example
+
+# iOS
+ios/App/Pods/
+ios/App/App.xcworkspace/xcuserdata/
+ios/App/App.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata
+*.xcodeproj/xcuserdata
+*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Behalte wichtige iOS Dateien
+!ios/App/Podfile
+!ios/App/Podfile.lock
