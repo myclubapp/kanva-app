@@ -40,15 +40,24 @@ In Xcode Cloud müssen Sie folgende Environment-Variablen setzen:
    - Wert: Ihre Supabase-URL
    - Wiederholen Sie für alle anderen Variablen
 
-### 2. Build-Script
+### 2. Build-Scripts
 
-Das Build-Script `ios/ci_scripts/ci_post_clone.sh` wird automatisch ausgeführt und:
+Xcode Cloud führt automatisch zwei Scripts aus:
 
+#### ci_post_clone.sh (nach dem Klonen)
 1. ✅ Erstellt eine `.env` Datei aus den Environment-Variablen
 2. ✅ Installiert npm-Abhängigkeiten (`npm ci`)
 3. ✅ Baut die Web-App (`npm run build`)
 4. ✅ Synchronisiert Capacitor mit iOS (`npx cap sync ios`)
-5. ✅ Installiert CocoaPods (`pod install`)
+5. ✅ Installiert CocoaPods (`pod install --verbose`)
+
+#### ci_pre_xcodebuild.sh (direkt vor dem Build)
+1. ✅ Überprüft ob Pods-Verzeichnis existiert
+2. ✅ Führt `pod install` erneut aus, falls notwendig
+3. ✅ Validiert das Vorhandensein der xcconfig-Dateien
+4. ✅ Führt pod install mit --repo-update aus, wenn Dateien fehlen
+
+Diese doppelte Absicherung stellt sicher, dass CocoaPods korrekt installiert ist.
 
 ### 3. Workflow-Einstellungen
 
@@ -89,9 +98,35 @@ Nach dem Setup:
 
 ### Fehler: "Unable to open base configuration reference file"
 
-**Lösung**: Das ci_post_clone.sh Script sollte diesen Fehler beheben. Stellen Sie sicher, dass:
-- `Podfile` und `Podfile.lock` im Git committed sind
-- Das Script ausführbar ist (`chmod +x ios/ci_scripts/ci_post_clone.sh`)
+**Ursache**: Die xcconfig-Dateien von CocoaPods wurden nicht korrekt erstellt.
+
+**Lösung**: Beide Build-Scripts (ci_post_clone.sh und ci_pre_xcodebuild.sh) beheben diesen Fehler:
+
+1. **Stellen Sie sicher, dass beide Scripts committed sind**:
+   ```bash
+   git status ios/ci_scripts/
+   ```
+
+2. **Scripts müssen ausführbar sein**:
+   ```bash
+   chmod +x ios/ci_scripts/*.sh
+   ```
+
+3. **Podfile und Podfile.lock müssen im Git sein**:
+   ```bash
+   git add ios/App/Podfile ios/App/Podfile.lock
+   ```
+
+4. **Überprüfen Sie die Build-Logs in Xcode Cloud**:
+   - Suchen Sie nach "Starting ci_post_clone.sh"
+   - Suchen Sie nach "Starting ci_pre_xcodebuild.sh"
+   - Überprüfen Sie, ob "pod install" erfolgreich war
+   - Schauen Sie nach "✓ Pods-App.release.xcconfig gefunden"
+
+**Wenn der Fehler weiterhin besteht**:
+- Überprüfen Sie, ob `npm run build` erfolgreich war
+- Stellen Sie sicher, dass die Environment-Variablen gesetzt sind
+- Überprüfen Sie, dass node_modules korrekt installiert wurden
 
 ### Build dauert zu lange
 
