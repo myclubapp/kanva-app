@@ -1,0 +1,17 @@
+.studio-content {
+  --background: var(--ion-background-color);
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Studio specific styles */
+ion-toolbar {
+  --border-width: 0 0 1px 0;
+  --border-color: var(--kanva-border-color);
+}

@@ -1,0 +1,5 @@
+package app.myclub.kanva;
+
+import com.getcapacitor.BridgeActivity;
+
+public class MainActivity extends BridgeActivity {}

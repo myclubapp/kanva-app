@@ -1,0 +1,36 @@
+/* KANVA Global Styles */
+
+/* Tab Bar Styling */
+.kanva-tab-bar {
+  border-top: 1px solid var(--kanva-border-color);
+  --background: var(--ion-background-color);
+}
+
+ion-tab-button {
+  --color: var(--kanva-text-secondary);
+  --color-selected: var(--ion-color-primary);
+}
+
+/* Header Styling */
+ion-header.ion-no-border ion-toolbar {
+  --border-width: 0 0 1px 0;
+  --border-color: var(--kanva-border-color);
+}
+
+/* Global button styles */
+ion-button {
+  font-weight: 600;
+}
+
+/* Card Styling */
+ion-card {
+  border-radius: 16px;
+  box-shadow: var(--kanva-shadow);
+}
+
+/* Smooth scrolling */
+ion-content {
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+}

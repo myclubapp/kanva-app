@@ -1,0 +1,105 @@
+/* KANVA App Theme */
+
+:root {
+  /* Primary Brand Colors */
+  --ion-color-primary: #4A90E2;
+  --ion-color-primary-rgb: 74, 144, 226;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #4180c7;
+  --ion-color-primary-tint: #5c9be5;
+
+  /* Secondary Colors */
+  --ion-color-secondary: #FF3B5C;
+  --ion-color-secondary-rgb: 255, 59, 92;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #e03451;
+  --ion-color-secondary-tint: #ff4f6c;
+
+  /* Background Colors - Light Mode */
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+
+  --ion-text-color: #1a1a1a;
+  --ion-text-color-rgb: 26, 26, 26;
+
+  --ion-color-step-50: #f7f7f7;
+  --ion-color-step-100: #f0f0f0;
+  --ion-color-step-150: #e8e8e8;
+  --ion-color-step-200: #e0e0e0;
+  --ion-color-step-250: #d9d9d9;
+  --ion-color-step-300: #d1d1d1;
+  --ion-color-step-350: #c9c9c9;
+  --ion-color-step-400: #c2c2c2;
+  --ion-color-step-450: #bababa;
+  --ion-color-step-500: #b3b3b3;
+  --ion-color-step-550: #ababab;
+  --ion-color-step-600: #a3a3a3;
+  --ion-color-step-650: #9c9c9c;
+  --ion-color-step-700: #949494;
+  --ion-color-step-750: #8d8d8d;
+  --ion-color-step-800: #858585;
+  --ion-color-step-850: #7d7d7d;
+  --ion-color-step-900: #767676;
+  --ion-color-step-950: #6e6e6e;
+
+  --ion-toolbar-background: #ffffff;
+  --ion-toolbar-border-color: #e0e0e0;
+  --ion-item-background: #ffffff;
+  --ion-card-background: #ffffff;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #0A0E27;
+    --ion-background-color-rgb: 10, 14, 39;
+
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+
+    --ion-color-step-50: #141829;
+    --ion-color-step-100: #1e222b;
+    --ion-color-step-150: #282c3d;
+    --ion-color-step-200: #32364f;
+    --ion-color-step-250: #3c4061;
+    --ion-color-step-300: #464a73;
+    --ion-color-step-350: #505485;
+    --ion-color-step-400: #5a5e97;
+    --ion-color-step-450: #6468a9;
+    --ion-color-step-500: #6e72bb;
+    --ion-color-step-550: #787ccd;
+    --ion-color-step-600: #8286df;
+    --ion-color-step-650: #8c90f1;
+    --ion-color-step-700: #969aff;
+    --ion-color-step-750: #a0a4ff;
+    --ion-color-step-800: #aaaeff;
+    --ion-color-step-850: #b4b8ff;
+    --ion-color-step-900: #bec2ff;
+    --ion-color-step-950: #c8ccff;
+
+    --ion-toolbar-background: #0A0E27;
+    --ion-toolbar-border-color: #1e222b;
+    --ion-item-background: #141829;
+    --ion-card-background: #141829;
+  }
+}
+
+/* Custom KANVA Variables */
+:root {
+  --kanva-gradient-start: #0A0E27;
+  --kanva-gradient-end: #1a1f3a;
+  --kanva-accent-blue: #4A90E2;
+  --kanva-accent-red: #FF3B5C;
+  --kanva-text-secondary: #8b92a8;
+  --kanva-border-color: #e0e0e0;
+  --kanva-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --kanva-border-color: #1e222b;
+    --kanva-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+}

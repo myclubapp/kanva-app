@@ -1,0 +1,46 @@
+.home-header {
+  text-align: center;
+  margin: 2rem 0 3rem;
+}
+
+.home-logo {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.home-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-header p {
+  color: var(--ion-color-medium);
+  font-size: 1.1rem;
+}
+
+.card-icon-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: var(--ion-color-primary);
+}
+
+.auth-card {
+  margin-top: 2rem;
+}
+
+.auth-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header-avatar {
+  width: 32px;
+  height: 32px;
+}
